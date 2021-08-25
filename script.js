@@ -16,23 +16,24 @@ function game(){
 
 //use prompt to get user input
 function userInput() {
-    let userPick = prompt("Please pick Rock, paper or scissor", "");
+    let userPick = prompt("Want to play a game? Pick rock, paper or scissor", "");
 //make parameter case sensitive so you can use rock,ROCK, RoCk etc
     let userPickToLowercase = userPick.toLowerCase();
 //check to see if they put in a correct type of choice
-//userPickToLowercase !== "rock" || userPickToLowercase !== "paper" || userPickToLowercase !== "scissor"
-    if (userPickToLowercase == "") {
-        alert("pick the right thing blank");
+
+    let choice = userPickToLowercase;
+if (choice == "") {
+        alert("Please fill in an answer");
         userInput();
         return;
-    } else if (userPickToLowercase !== "rock") {
-        alert("pick the right thing, wrong input");
+    } else if (userPickToLowercase !== "rock" && userPickToLowercase !== "paper" && userPickToLowercase !== "scissor") {
+        alert("You have to choose rock, paper or scissors");
         userInput();
         return;
-    } else if (userPickToLowercase == "rock"){
-        console.log(userPickToLowercase);
+    } else if (userPickToLowercase == "rock" || userPickToLowercase == "paper" || userPickToLowercase == "scissor"){
+        console.log(choice);
         return;
-    } 
+    }
     
 }
 
