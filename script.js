@@ -1,6 +1,12 @@
 // making a rock paper scissor game(RPS). will be played in the console
 
-//create a function called computerPlay
+//create a function called computerPlay that will randomly pick RP or S
+function computerPlay() {
+    let computerChocies = ["Rock", "Paper", "Scissor"];
+    let randomNumber = Math.floor(Math.random()*computerChocies.length);
+    let computersPick = computerChocies[randomNumber];
+    return computersPick;
+}
 
 //write a function that plays one round of RPS
 //should have 2 parameter playerSelection and computerSelection
