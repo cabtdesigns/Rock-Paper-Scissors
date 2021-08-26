@@ -1,18 +1,6 @@
 // making a rock paper scissor game(RPS). will be played in the console
 
-// write a new function called game().
-//have it play 5 rounds
-function game(){
-    console.log(computerPlay());
-    console.log(computerPlay());
-    console.log(computerPlay());
-    console.log(computerPlay());
-    console.log(computerPlay());
-    }
 
-//have it keep score
-//have it tell you the winner and loser at the end
-//can use a loop or call the playRound() function 5 times
 let userResponse = null;
 //use prompt to get user input
 function userInput() {
@@ -35,9 +23,7 @@ if (userPickToLowercase == "") {
 }
 
 
-//write a function that plays one round of RPS
-//should have 2 parameter playerSelection and computerSelection
-//then a return string that declares a winner. like you lose, paper beats rock
+
 //create a function called computerPlay that will randomly pick RP or S
 let computerResponse = null;
 
@@ -49,58 +35,52 @@ function computerPlay() {
     return computersPick;
 }
 
+//then a return string that declares a winner. like you lose, paper beats rock
 let userScore = 0;
 let computerScore = 0;
 
 function winnerAlerts() {
   if (userResponse === "rock" && computerResponse === "scissor") {
     userScore++;
-    alert("Rock wins! Point to you")
+    alert("You " + userResponse + " | Me " + computerResponse + " Rock wins! Point to you")
     } else if (computerResponse === "rock" && userResponse === "scissor") {
         alert("Rock wins! Point to me")
         computerScore++;
     } else if (computerResponse === "paper" && userResponse === "rock"){
-        alert("Paper wins! Point to me")
+        alert("You " + userResponse + " | Me " + computerResponse + " Paper wins! Point to me")
         computerScore++;
     } else if (userResponse === "paper" && computerResponse === "rock") {
-        alert("Paper wins! Point to you")
+        alert("You " + userResponse + " | Me " + computerResponse + " Paper wins! Point to you")
         userScore++;
        } else if (userResponse === "scissor" && computerResponse === "paper") {
-        alert("Scissor wins! Point to you")
+        alert("You " + userResponse + " | Me " + computerResponse + " Scissor wins! Point to you")
         userScore++;
        } else if (computerResponse === "scissor" && userResponse === "paper"){
-        alert("Scissor wins! Point to me")
+        alert("You " + userResponse + " | Me " + computerResponse + " Scissor wins! Point to me")
         computerScore++;
        } else if (userResponse === "scissor" && computerResponse === "scissor" || computerResponse === "paper" && userResponse === "paper" || computerResponse === "rock" && userResponse === "rock") {
-        alert("TIE! We are all winners! No pints given")
+        alert("You " + userResponse + " | Me " + computerResponse + " TIE! We are all winners! No points given")
        }
 }
-
-function testAlerts() {
-    let one = "scissor";
-    let two = "rock";
-    if (one === "rock" && two === "scissor" || two === "rock" && one === "scissor") {
-        alert("rock beats scissor");
-    }
-}
-
+//can use a loop or call the playRound() function 5 times
 function playRound() {
-  // your code here!
-  let counter = 1;
-while (counter <= 5) {
+  //have it play 5 rounds
+  let counter = 5;
+while (counter > 0) {
   userInput();
   computerPlay();
   winnerAlerts();
-  alert("you have played " + counter + " games so far. Score stands at | You " + userScore + " Me " + computerScore)
-  counter = counter + 1;
+//have it keep score
+//have it tell you the winner and loser at the end
+  alert((counter - 1) + " games to go. Score stands at | You " + userScore + " Me " + computerScore)
+  counter--;
   console.log("user:" + userResponse + "| Computer:" + computerResponse)
     }
+    if (counter == 0 && userScore > computerScore){
+        alert("Game Over. YOU WIN! Final Score You: " + userScore + " | Me: " + computerScore);
+    } else if (counter == 0 && computerScore > userScore) {
+        alert("Game Over. I WIN! Final Score Me: " + computerScore + " | You: " + userScore);
+    } else if (counter == 0 && computerScore === userScore) {
+        alert("Game Over. WE BOTH WIN! Final Score You: " + userScore + " | Me: " + computerScore);
+    }
 }
-
-const playerSelection = "userInput";
-const computerSelection = computerPlay();
-//console.log(playRound(playerSelection, computerSelection));
-
-// rock beats scissor
-// paper beats rock
-// scissor beats paper
