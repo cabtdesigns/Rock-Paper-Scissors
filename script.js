@@ -49,15 +49,30 @@ function computerPlay() {
     return computersPick;
 }
 
+let userScore = 0;
+let computerScore = 0;
+
 function winnerAlerts() {
-  if (userResponse === "rock" && computerResponse === "scissor" || computerResponse === "rock" && userResponse === "scissor") {
-     alert("rock wins!")
-    } else if (userResponse === "paper" && computerResponse === "rock" || computerResponse === "paper" && userResponse === "rock") {
-        alert("paper wins!")
-       } else if (userResponse === "scissor" && computerResponse === "paper" || computerResponse === "scissor" && userResponse === "paper") {
-        alert("scissor wins!")
+  if (userResponse === "rock" && computerResponse === "scissor") {
+    userScore++;
+    alert("Rock wins! Point to you")
+    } else if (computerResponse === "rock" && userResponse === "scissor") {
+        alert("Rock wins! Point to me")
+        computerScore++;
+    } else if (computerResponse === "paper" && userResponse === "rock"){
+        alert("Paper wins! Point to me")
+        computerScore++;
+    } else if (userResponse === "paper" && computerResponse === "rock") {
+        alert("Paper wins! Point to you")
+        userScore++;
+       } else if (userResponse === "scissor" && computerResponse === "paper") {
+        alert("Scissor wins! Point to you")
+        userScore++;
+       } else if (computerResponse === "scissor" && userResponse === "paper"){
+        alert("Scissor wins! Point to me")
+        computerScore++;
        } else if (userResponse === "scissor" && computerResponse === "scissor" || computerResponse === "paper" && userResponse === "paper" || computerResponse === "rock" && userResponse === "rock") {
-        alert("TIE! We are all winners!")
+        alert("TIE! We are all winners! No pints given")
        }
 }
 
@@ -71,10 +86,15 @@ function testAlerts() {
 
 function playRound() {
   // your code here!
+  let counter = 1;
+while (counter <= 5) {
   userInput();
   computerPlay();
-  console.log(userResponse + "|" + computerResponse)
   winnerAlerts();
+  alert("you have played " + counter + " games so far. Score stands at | You " + userScore + " Me " + computerScore)
+  counter = counter + 1;
+  console.log("user:" + userResponse + "| Computer:" + computerResponse)
+    }
 }
 
 const playerSelection = "userInput";
