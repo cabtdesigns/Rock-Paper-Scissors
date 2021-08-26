@@ -42,21 +42,45 @@ if (userPickToLowercase == "") {
 let computerResponse = null;
 
 function computerPlay() {
-    let computerChocies = ["Rock", "Paper", "Scissor"];
+    let computerChocies = ["rock", "paper", "scissor"];
     let randomNumber = Math.floor(Math.random()*computerChocies.length);
     let computersPick = computerChocies[randomNumber];
     computerResponse = computersPick;
     return computersPick;
 }
 
+function winnerAlerts() {
+  if (userResponse === "rock" && computerResponse === "scissor" || computerResponse === "rock" && userResponse === "scissor") {
+     alert("rock wins!")
+    } else if (userResponse === "paper" && computerResponse === "rock" || computerResponse === "paper" && userResponse === "rock") {
+        alert("paper wins!")
+       } else if (userResponse === "scissor" && computerResponse === "paper" || computerResponse === "scissor" && userResponse === "paper") {
+        alert("scissor wins!")
+       } else if (userResponse === "scissor" && computerResponse === "scissor" || computerResponse === "paper" && userResponse === "paper" || computerResponse === "rock" && userResponse === "rock") {
+        alert("TIE! We are all winners!")
+       }
+}
+
+function testAlerts() {
+    let one = "scissor";
+    let two = "rock";
+    if (one === "rock" && two === "scissor" || two === "rock" && one === "scissor") {
+        alert("rock beats scissor");
+    }
+}
 
 function playRound() {
   // your code here!
   userInput();
   computerPlay();
   console.log(userResponse + "|" + computerResponse)
+  winnerAlerts();
 }
 
 const playerSelection = "userInput";
 const computerSelection = computerPlay();
 //console.log(playRound(playerSelection, computerSelection));
+
+// rock beats scissor
+// paper beats rock
+// scissor beats paper
