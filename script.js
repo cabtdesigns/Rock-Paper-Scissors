@@ -1,8 +1,7 @@
-// making a rock paper scissor game(RPS). will be played in the console
+// making a rock paper scissor game(RPS).
 
-
-let userResponse = null;
 //use prompt to get user input
+let userResponse = null;
 function userInput() {
     let userPick = prompt("Want to play a game? Pick rock, paper or scissor", "");
 //make parameter case sensitive so you can use rock,ROCK, RoCk etc
@@ -18,11 +17,8 @@ if (userPickToLowercase == "") {
         return;
     } else if (userPickToLowercase == "rock" || userPickToLowercase == "paper" || userPickToLowercase == "scissor"){
         userResponse = userPickToLowercase; 
-    }
-    
+    }    
 }
-
-
 
 //create a function called computerPlay that will randomly pick RP or S
 let computerResponse = null;
