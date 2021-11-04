@@ -38,24 +38,24 @@ let computerScore = 0;
 function winnerAlerts() {
   if (userResponse === "rock" && computerResponse === "scissor") {
     userScore++;
-    alert("You " + userResponse + " | Me " + computerResponse + " Rock wins! Point to you")
+    alert("You " + userResponse + " | Me " + computerResponse + " - Rock wins! Point to you")
     } else if (computerResponse === "rock" && userResponse === "scissor") {
         alert("Rock wins! Point to me")
         computerScore++;
     } else if (computerResponse === "paper" && userResponse === "rock"){
-        alert("You " + userResponse + " | Me " + computerResponse + " Paper wins! Point to me")
+        alert("You " + userResponse + " | Me " + computerResponse + " - Paper wins! Point to me")
         computerScore++;
     } else if (userResponse === "paper" && computerResponse === "rock") {
-        alert("You " + userResponse + " | Me " + computerResponse + " Paper wins! Point to you")
+        alert("You " + userResponse + " | Me " + computerResponse + " - Paper wins! Point to you")
         userScore++;
        } else if (userResponse === "scissor" && computerResponse === "paper") {
-        alert("You " + userResponse + " | Me " + computerResponse + " Scissor wins! Point to you")
+        alert("You " + userResponse + " | Me " + computerResponse + " - Scissor wins! Point to you")
         userScore++;
        } else if (computerResponse === "scissor" && userResponse === "paper"){
-        alert("You " + userResponse + " | Me " + computerResponse + " Scissor wins! Point to me")
+        alert("You " + userResponse + " | Me " + computerResponse + " - Scissor wins! Point to me")
         computerScore++;
        } else if (userResponse === "scissor" && computerResponse === "scissor" || computerResponse === "paper" && userResponse === "paper" || computerResponse === "rock" && userResponse === "rock") {
-        alert("You " + userResponse + " | Me " + computerResponse + " TIE! We are all winners! No points given")
+        alert("You " + userResponse + " | Me " + computerResponse + " - TIE! We are all winners! No points given")
        }
 }
 //can use a loop or call the playRound() function 5 times
@@ -68,15 +68,15 @@ while (counter > 0) {
   winnerAlerts();
 //have it keep score
 //have it tell you the winner and loser at the end
-  alert((counter - 1) + " games to go. Score stands at | You " + userScore + " Me " + computerScore)
+  alert((counter - 1) + " games to go. Score stands at | You " + userScore + " - Me " + computerScore)
   counter--;
   console.log("user:" + userResponse + "| Computer:" + computerResponse)
     }
     if (counter == 0 && userScore > computerScore){
-        alert("Game Over. YOU WIN! Final Score You: " + userScore + " | Me: " + computerScore);
+        alert("Game Over. YOU WIN! Final Score | You: " + userScore + " - Me: " + computerScore);
     } else if (counter == 0 && computerScore > userScore) {
-        alert("Game Over. I WIN! Final Score Me: " + computerScore + " | You: " + userScore);
+        alert("Game Over. I WIN! Final Score | Me: " + computerScore + " - You: " + userScore);
     } else if (counter == 0 && computerScore === userScore) {
-        alert("Game Over. WE BOTH WIN! Final Score You: " + userScore + " | Me: " + computerScore);
+        alert("Game Over. WE BOTH WIN! Final Score | You: " + userScore + " - Me: " + computerScore);
     }
 }
