@@ -1,5 +1,5 @@
 # Rock Paper Scissors
-<p>Very basic rock paper scissor game. This is the first time I wrote javaScript from scratch. </p>
+<p>Very basic rock paper scissor game. When you start playing an alert box appears asking for your selection, then results are shown in the alert box. This is the first time I wrote javaScript from scratch. </p>
 
 ## Technology
 <ul>
